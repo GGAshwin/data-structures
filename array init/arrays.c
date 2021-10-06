@@ -1,9 +1,12 @@
 #include<stdio.h>
-int arr[100];
+#define MAX 11
 int main(){
-    for(int i=1;i<=10;i+=3)
-    arr[i]=i;
-    for(int i=1;i<=10;i++)
-    printf("%d",arr[i]);
+    int i,*ptr;//declaring pointer
+    ptr=calloc(10,sizeof(int));//Dynamic Memory Allocation using 'calloc'
+    for(int i=0;i<MAX;i++){
+        *(ptr+i)=i;
+    }
+    for(int i=0;i<MAX;i++)
+    printf("%d ",*(ptr+i));
     return 0;
 }
